@@ -11,7 +11,7 @@ app.get("/", send);
   
 app.use("/public", express.static(__dirname + "/public")); 
 
-app.use("/assests", express.static(__dirname + "/assets"));
+app.use("/assests/css", express.static(__dirname + "/assets/css"));
 
 
 
