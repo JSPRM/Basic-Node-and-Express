@@ -11,13 +11,7 @@ app.get("/", send);
   
 app.use("/public", express.static(__dirname + "/public")); 
 
-app.use("/views/css", express.static(__dirname + "/views/css"));
-app.use("/views/images", express.static(__dirname + "/views/images"));
-app.use("/views/fonts", express.static(__dirname + "/views/fonts"));
-app.use("/views/js", express.static(__dirname + "/views/js"));
-
-
-
+app.use("/assests", express.static(__dirname + "/assets"));
 
 
 
