@@ -41,11 +41,21 @@ var uno = (req, res, next)=>{
     next();
 }
 var dos = (req, res) => {
-    res.send({time: req.time});
+    res.send({
+        time: req.time
+    });
 }
 
 
 app.get("/now",uno,dos);
+
+var send2 = (req, res) => {
+    res.json({
+        echo: req.params.word
+    })
+};
+
+app.get("/:word/echo",send2)
 
 
 
