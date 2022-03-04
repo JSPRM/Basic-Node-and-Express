@@ -30,7 +30,22 @@ app.get("/json", (req, res) => {
             message: "Hello json"
           });
     }
-  });
+});
+
+var chainmware = (req, res, next) => {
+    req.time = new Date().toString();
+}
+
+var uno = (req, res, next)=>{
+    req.time = new Date().toString();
+    next();
+}
+var dos = (req, res) => {
+    res.send({time: req.time});
+}
+
+
+app.get("/now",uno,dos);
 
 
 
