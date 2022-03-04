@@ -72,6 +72,13 @@ var send4 = (req, res) => {
 
 app.route("/name").get(send3).post(send4)
 
+var chatlogs = (req, res) => {
+    payload = req.json
+    res.json(payload)
+}
+
+app.route("/logs").get().post(chatlogs)
+
 
 
 
