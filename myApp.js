@@ -64,7 +64,13 @@ var send3 = (req, res) => {
     })
 }
 
-app.route("/name").get(send3).post(send3)
+var send4 = (req, res) => {
+    res.json({
+        name: req.body.first + " " + req.body.last
+    })
+}
+
+app.route("/name").get(send3).post(send4)
 
 
 
