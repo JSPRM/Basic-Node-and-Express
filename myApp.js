@@ -57,7 +57,13 @@ var send2 = (req, res) => {
 
 app.get("/:word/echo",send2)
 
+var send3 = (req, res) => {
+    res.json({
+        name: req.query.first + " " + req.query.last
+    })
+}
 
+app.route("/name").get(send3).post(send3)
 
 
 
