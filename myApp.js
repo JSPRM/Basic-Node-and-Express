@@ -74,6 +74,7 @@ app.route("/name").get(send3).post(send4)
 
 var chatlogs = (req, res) => {
     payload = req.json
+    console.log(payload)
     res.json(payload)
 }
 
