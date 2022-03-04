@@ -1,13 +1,14 @@
 var express = require('express');
 var app = express();
 require('dotenv').config();
+var bodyParser = require('body-parser');
 
 var mware = (req, res, next) => {
     console.log(req.method+" "+req.path+" - "+req.ip);
     next();
 } 
 
-app.use(mware);
+app.use(mware,bodyParser.urlencoded({extended: false}));
 
 
 var send = (req, res) => {
